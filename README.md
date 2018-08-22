@@ -31,3 +31,6 @@ $ npm start
 
 - Node.js 8.x
 - Typescript 2.8+
+
+### 使用说明
+该项目只是客户端部分，还需要有服务[grpc服务](https://github.com/yuedun/nodejs-grpc.git)

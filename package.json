@@ -17,11 +17,12 @@
     "tsc": "ets && tsc -p tsconfig.json",
     "ci": "npm run lint && npm run cov && npm run tsc",
     "autod": "autod",
-    "lint": "tslint --project . -c tslint.json",
+    "lint": "tslint --project . -c tslint.json --fix",
     "clean": "ets clean"
   },
   "dependencies": {
     "egg": "^2.6.1",
+    "egg-grpc": "^1.0.3",
     "egg-scripts": "^2.6.0"
   },
   "devDependencies": {

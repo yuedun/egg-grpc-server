@@ -13,6 +13,7 @@ logs/
 *.js
 !.autod.conf.js
 
+typings/
 app/**/*.js
 test/**/*.js
 config/**/*.js

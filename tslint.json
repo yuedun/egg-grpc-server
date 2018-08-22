@@ -13,6 +13,10 @@
       "error",
       "warn"
     ],
+    "indent": [
+      true,
+      "tab"
+    ],
     "space-before-function-paren": false,
     "interface-name": [
       true,
