@@ -1,4 +1,4 @@
-# hackernews-async-ts
+# grpc client
 
 [Hacker News](https://news.ycombinator.com/) showcase using typescript && egg
 
