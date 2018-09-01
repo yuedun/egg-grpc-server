@@ -1,25 +1,40 @@
-import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
+'use strict';
+import { EggAppConfig, PowerPartial } from 'egg';
 
 // for config.{env}.ts
 export type DefaultConfig = PowerPartial<EggAppConfig & BizConfig>;
 
 // app special config scheme
 export interface BizConfig {
-  sourceUrl: string;
+	mongoose: {
+		client: {
+			url: string;
+			options: any;
+		},
+		DEBUG?: boolean; //是否输出查询日志
+	};
 }
 
-export default (appInfo: EggAppInfo) => {
-  const config = {} as PowerPartial<EggAppConfig> & BizConfig;
+export default (appInfo: EggAppConfig) => {
+	const config = {} as PowerPartial<EggAppConfig> & BizConfig;
 
-  // app special config
-  config.sourceUrl = `https://github.com/eggjs/examples/tree/master/${appInfo.name}`;
+	// use for cookie sign key, should change to your own and keep security
+	config.keys = appInfo.name + '_1534916691102_9753';
 
-  // override config from framework / plugin
-  // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1534916691102_9753';
+	// add your config here
+	config.middleware = ['notfoundHandler', 'errorHandler'];
 
-  // add your config here
-  config.middleware = [];
-
-  return config;
+	config.security = {
+		csrf: {
+			enable: false,
+		},
+		domainWhiteList: ['http://127.0.0.1:8002', 'http://127.0.0.1:9528/'],
+		/**
+		 * 禁用methodnoallow，对OPTIONS放行
+		 */
+		methodnoallow: {
+			enable: false,
+		},
+	};
+	return config;
 };

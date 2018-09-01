@@ -15,7 +15,12 @@ export default class HomeController extends Controller {
 	public async index() {
 		const { ctx } = this;
 		const client: Greeter = ctx.grpc.helloworld.greeter;
-		const result = await client.sayHello({ name: "这是grpc请求参数" });
+		const result = await client.sayHello({ name: '这是grpc请求参数' });
 		ctx.body = await ctx.service.test.sayHi(JSON.stringify(result));
+	}
+	public async test() {
+		const { ctx } = this;
+
+		await ctx.render('index');
 	}
 }

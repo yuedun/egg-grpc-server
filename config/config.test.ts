@@ -5,7 +5,7 @@ export default () => {
 	const config: DefaultConfig = {};
 
 	// add your config here
-	config.middleware = ['interceptor', 'errorHandler'];
+	config.middleware = ['notfoundHandler', 'errorHandler'];
 
 	config.view = {
 		defaultViewEngine: 'nunjucks',

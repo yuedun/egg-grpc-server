@@ -1,10 +1,15 @@
-# grpc client
+# egg-knight
 
-[Hacker News](https://news.ycombinator.com/) showcase using typescript && egg
+## 环境要求
+Node.js: >= 8.0.0
 
-## QuickStart
+## 快速入门
 
-### Development
+<!-- 在此次添加使用文档 -->
+
+如需进一步了解，参见 [egg 文档][egg]。
+
+### 本地开发
 
 ```bash
 $ npm i
@@ -12,25 +17,40 @@ $ npm run dev
 $ open http://localhost:7001/
 ```
 
-Don't tsc compile at development mode, if you had run `tsc` then you need to `npm run clean` before `npm run dev`.
-
-### Deploy
+### 部署
 
 ```bash
-$ npm run tsc
 $ npm start
+$ npm stop
 ```
 
-### Npm Scripts
+### 单元测试
 
-- Use `npm run lint` to check code style
-- Use `npm test` to run unit test
-- se `npm run clean` to clean compiled js at development mode once
+- [egg-bin] 内置了 [mocha], [thunk-mocha], [power-assert], [istanbul] 等框架，让你可以专注于写单元测试，无需理会配套工具。
+- 断言库非常推荐使用 [power-assert]。
+- 具体参见 [egg 文档 - 单元测试](https://eggjs.org/zh-cn/core/unittest)。
 
-### Requirement
+### 内置指令
 
-- Node.js 8.x
-- Typescript 2.8+
+- 使用 `npm run lint` 来做代码风格检查。
+- 使用 `npm test` 来执行单元测试。
+- 使用 `npm run autod` 来自动检测依赖更新，详细参见 [autod](https://www.npmjs.com/package/autod) 。
+- 使用 `npm run clean` 清除js文件
 
-### 使用说明
-该项目只是客户端部分，还需要有服务[grpc服务](https://github.com/yuedun/nodejs-grpc.git)
+### 调试
+
+使用 `npm run debug` 来进行debug调试。
+服务启动后chrome-devtools中有个绿色图标，`add conneciton`:`localhost:9999`，然后在**source**中就可以愉快的调试了
+* ![1](http://p6uyzta82.bkt.clouddn.com/node_api_1531470791911)
+* ![2](http://p6uyzta82.bkt.clouddn.com/node_api_15314708597)
+* ![3](http://p6uyzta82.bkt.clouddn.com/node_api_1531470879518)
+
+#### 在vocode或webstorm中调试
+> npm install
+
+保证所有依赖都安装
+vscode中安装**eggjs**插件，按F5启动即可调试
+
+如有疑问可可参考文档 [debug](https://eggjs.org/zh-cn/tutorials/typescript.html#debug)
+
+[egg]: http://eggjs.org/zh-cn/intro/quickstart.html
