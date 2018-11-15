@@ -20,7 +20,12 @@ export default class HomeController extends Controller {
 	}
 	public async test() {
 		const { ctx } = this;
-
-		await ctx.render('index');
+		const result = await ctx.service.test.queryMysql();
+		ctx.body = result;
+	}
+	public async testMong() {
+		const { ctx } = this;
+		const result = await ctx.service.test.queryMongo();
+		ctx.body = result;
 	}
 }

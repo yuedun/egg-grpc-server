@@ -4,11 +4,11 @@ export default (app) => {
     const { mongoose } = app;
 	   const { Schema } = mongoose;
     const ModelSchema = new Schema({
-        mobile: {
+        page_name: {
             type: String,
             required: true,
         },
-        password: {
+        url: {
             type: String,
             required: true,
         },
@@ -23,5 +23,5 @@ export default (app) => {
         }
         next();
     });
-    return mongoose.model('TestModel', ModelSchema, 'test');
+    return mongoose.model('TestModel', ModelSchema, 'activ_page');
 };
