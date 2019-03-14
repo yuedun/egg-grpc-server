@@ -10,9 +10,9 @@ export interface BizConfig {
 		client: {
 			url: string;
 			options: any;
-		},
-		DEBUG?: boolean; //是否输出查询日志
+		}
 	};
+	mongooseDebug: boolean;
 }
 
 export default (appInfo: EggAppConfig) => {

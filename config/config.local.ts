@@ -6,7 +6,7 @@ export default () => {
 
 	config.mongoose = {
 		client: {
-			url: 'mongodb://xxx:27027/admin',
+			url: 'mongodb://127.0.0.1/blogs',
 			options: {
 				server: {
 					socketOptions: {
@@ -18,18 +18,18 @@ export default () => {
 					poolSize: 20,
 				},
 			},
-		},
-		DEBUG: true, //是否输出查询日志
+		}
 	};
+	config.mongoseDebug = true;
 	config.sequelize = {
 		delegate: 'mysql',
 		baseDir: 'mysql',
 		dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
-		database: 'bi',
-		host: '',
+		database: 'test',
+		host: 'localhost',
 		port: '3306',
-		username: '',
-		password: '',
+		username: 'root',
+		password: 'root',
 	};
 	// 服务器日志默认地址~/logs/
 	config.logger = {

@@ -14,7 +14,7 @@ export default class Test extends Service {
 	}
 	public async queryMysql() {
 		const model = this.ctx.mysql.StuDataDay;
-		const result = await model.findById(1)
+		const result = await model.findByPk(1)
 		return result;
 	}
 	public async queryMongo() {

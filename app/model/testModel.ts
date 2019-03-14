@@ -2,7 +2,7 @@ import moment from 'moment';
 
 export default (app) => {
     const { mongoose } = app;
-	   const { Schema } = mongoose;
+    const { Schema } = mongoose;
     const ModelSchema = new Schema({
         page_name: {
             type: String,
